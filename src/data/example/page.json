@@ -1,0 +1,20 @@
+{
+  "components": [
+    {
+      "type": "section",
+      "label": "Intro",
+      "children": [
+        {
+          "type": "heading",
+          "label": "Main Heading",
+          "content": "Simon Hales"
+        },
+        {
+          "type": "heading",
+          "label": "Sub Heading",
+          "content": "Front End Developer"
+        }
+      ]
+    }
+  ]
+}
