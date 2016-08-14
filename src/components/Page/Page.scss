@@ -1,0 +1,35 @@
+
+@import '../../styles/variables/header';
+@import '../../styles/shared/component-highlight';
+
+.root {
+}
+
+.exampleIntro {
+  height: 100vh;
+  height: calc(100vh - #{$header____height});
+  background-color: #f4f5f7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exampleIntro__block {
+  @extend %component-highlight;
+
+  color: #656e73;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+}

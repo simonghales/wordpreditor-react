@@ -1,0 +1,6 @@
+
+@import '../shared/typography';
+
+body {
+  @extend %font--default;
+}

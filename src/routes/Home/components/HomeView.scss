@@ -1,0 +1,14 @@
+
+@import '../../../styles/shared/main-layout';
+
+.root {
+  @extend %ml-root;
+}
+
+  .components-list-container {
+    @extend %ml-components-list-container;
+  }
+
+  .main-container {
+    @extend %ml-main-container;
+  }
