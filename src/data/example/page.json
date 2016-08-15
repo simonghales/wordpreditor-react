@@ -1,18 +1,23 @@
 {
   "components": [
     {
-      "type": "section",
+      "type": "PCSECTION",
       "label": "Intro",
       "children": [
         {
-          "type": "heading",
+          "type": "PCHEADING",
           "label": "Main Heading",
           "content": "Simon Hales"
         },
         {
-          "type": "heading",
+          "type": "PCHEADING",
           "label": "Sub Heading",
           "content": "Front End Developer"
+        },
+        {
+          "type": "PCIMAGE",
+          "label": "Photo...",
+          "content": "http://placekitten.com/300/500"
         }
       ]
     }
