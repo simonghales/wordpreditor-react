@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './PCSection.scss'
-import { returnComponentObject } from '../../utilities/component'
+import { returnChildren } from '../../../utilities/component'
 
 class PCSection extends React.Component {
 
@@ -15,16 +15,7 @@ class PCSection extends React.Component {
 
     const { data } = this.props;
 
-    let children = [];
-
-    for(let i = 0, len = data.children.length; i < len; i++) {
-      let child = data.children[i];
-      children.push(
-        returnComponentObject(child)
-      );
-    }
-
-    return children;
+    return returnChildren(data);
 
   }
 
@@ -33,10 +24,8 @@ class PCSection extends React.Component {
     const { data } = this.props;
 
     return(
-      <div className={classes['PCSection']}>
-        <h1>PCSection</h1>
-        <h2>{data.label}</h2>
-        <div>
+      <div className={classes['root']}>
+        <div className={classes['content']}>
           {this.renderChildren()}
         </div>
       </div>
@@ -44,6 +33,10 @@ class PCSection extends React.Component {
 
   }
 
+}
+
+PCSection.propTypes = {
+  data: React.PropTypes.object.isRequired
 }
 
 export default PCSection

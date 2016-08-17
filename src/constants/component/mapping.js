@@ -1,10 +1,10 @@
 
 import React          from 'react'
 import * as types     from './types'
-import PCHeading      from '../../components/PCHeading'
-import PCImage        from '../../components/PCImage'
-import PCParagraph    from '../../components/PCParagraph'
-import PCSection      from '../../components/PCSection'
+import PCHeading      from '../../components/pageComponents/PCHeading'
+import PCImage        from '../../components/pageComponents/PCImage'
+import PCParagraph    from '../../components/pageComponents/PCParagraph'
+import PCSection      from '../../components/pageComponents/PCSection'
 
 export const COMPONENT_MAPPING = {
   [types.PCHEADING]: (data) => (<PCHeading data={data} />),

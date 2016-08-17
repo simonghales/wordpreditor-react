@@ -3,6 +3,29 @@
     {
       "type": "PCSECTION",
       "label": "Intro",
+      "content": "",
+      "children": [
+        {
+          "type": "PCHEADING",
+          "label": "Main Heading",
+          "content": "Simon Hales"
+        },
+        {
+          "type": "PCHEADING",
+          "label": "Sub Heading",
+          "content": "Front End Developer"
+        },
+        {
+          "type": "PCIMAGE",
+          "label": "Photo...",
+          "content": "http://placekitten.com/300/500"
+        }
+      ]
+    },
+    {
+      "type": "PCSECTION",
+      "label": "Intro",
+      "content": "",
       "children": [
         {
           "type": "PCHEADING",
