@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './PCParagraph.scss'
+import { getStyles } from '../../../utilities/component/styles'
 
 
 class PCParagraph extends React.Component {
@@ -9,10 +10,15 @@ class PCParagraph extends React.Component {
   }
 
   render() {
+
+    const { data } = this.props;
+    const { content } =  data;
+    const styles = getStyles(data);
+
     return(
-      <div className={classes['root']}>
-        <h1>PCParagraph</h1>
-      </div>
+      <p className={classes['root']} style={styles}>
+        {content}
+      </p>
     );
   }
 

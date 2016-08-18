@@ -1,0 +1,18 @@
+{
+  "styles": {
+    "Main Heading": {
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "margin": "0 0 5px 0",
+      "textAlign": "center"
+    },
+    "Sub Heading": {
+      "fontSize": "20px",
+      "textAlign": "center"
+    },
+    "Main Text": {
+      "margin": "10px auto",
+      "maxWidth": "400px"
+    }
+  }
+}

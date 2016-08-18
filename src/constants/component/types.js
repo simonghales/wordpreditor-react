@@ -1,8 +1,8 @@
 
-export const PCHEADING        = 'PCHEADING'
-export const PCIMAGE          = 'PCIMAGE'
-export const PCPARAGRAPH      = 'PCPARAGRAPH'
-export const PCSECTION        = 'PCSECTION'
+export const PCHEADING        = 'PCHeading'
+export const PCIMAGE          = 'PCImage'
+export const PCPARAGRAPH      = 'PCParagraph'
+export const PCSECTION        = 'PCSection'
 
 export const COMPONENT_TYPES_SETTINGS = {
   [PCHEADING]: {

@@ -1,46 +1,54 @@
 {
   "components": [
     {
-      "type": "PCSECTION",
+      "type": "PCSection",
+      "styles": "default",
       "label": "Intro",
       "content": "",
       "children": [
         {
-          "type": "PCHEADING",
+          "type": "PCHeading",
+          "styles": "Main Heading",
           "label": "Main Heading",
           "content": "Simon Hales"
         },
         {
-          "type": "PCHEADING",
+          "type": "PCHeading",
+          "styles": "Sub Heading",
           "label": "Sub Heading",
           "content": "Front End Developer"
         },
         {
-          "type": "PCIMAGE",
-          "label": "Photo...",
-          "content": "http://placekitten.com/300/500"
+          "type": "PCParagraph",
+          "styles": "Main Text",
+          "label": "Special description",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolor et fuga harum id molestiae perferendis, quaerat reprehenderit repudiandae sint soluta veniam voluptas! Ab accusantium expedita facere nulla numquam omnis."
         }
       ]
     },
     {
-      "type": "PCSECTION",
+      "type": "PCSection",
+      "styles": "default",
       "label": "Intro",
       "content": "",
       "children": [
         {
-          "type": "PCHEADING",
+          "type": "PCHeading",
+          "styles": "default",
           "label": "Main Heading",
           "content": "Simon Hales"
         },
         {
-          "type": "PCHEADING",
+          "type": "PCHeading",
+          "styles": "default",
           "label": "Sub Heading",
           "content": "Front End Developer"
         },
         {
-          "type": "PCIMAGE",
+          "type": "PCImage",
+          "styles": "default",
           "label": "Photo...",
-          "content": "http://placekitten.com/300/500"
+          "content": "http://placekitten.com/800/500"
         }
       ]
     }

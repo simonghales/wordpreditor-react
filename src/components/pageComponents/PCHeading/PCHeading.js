@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './PCHeading.scss'
-
+import { getStyles } from '../../../utilities/component/styles'
 
 class PCHeading extends React.Component {
 
@@ -12,11 +12,12 @@ class PCHeading extends React.Component {
 
     const { data } = this.props;
     const { content } =  data;
+    const styles = getStyles(data);
 
     return(
-      <div className={classes['PCHeading']}>
-        <h1>{content}</h1>
-      </div>
+      <h1 className={classes['root']} style={styles}>
+        {content}
+      </h1>
     );
   }
 
