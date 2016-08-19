@@ -7,6 +7,31 @@ export function areChildrenAllowed(type) {
   return COMPONENT_TYPES_SETTINGS[type].childrenAllowed;
 }
 
+export function recursiveGetChildrenCount(children) {
+
+  let count = children.length;
+
+  for (var i = 0, len = children.length; i < len; i++) {
+    let childChildren = children[i].children;
+    if(childChildren) {
+      count += recursiveGetChildrenCount(childChildren);
+    }
+  }
+
+  return count;
+
+}
+
+export function returnComponentChildrenCount(componentData) {
+  const { children } = componentData;
+  return (children) ? children.length : 0;
+}
+
+export function returnComponentDescendantsCount(componentData) {
+  const { children } = componentData;
+  return (children) ? recursiveGetChildrenCount(children) : 0;
+}
+
 export function returnComponentObject(componentData) {
   const { type } = componentData;
   const component = COMPONENT_MAPPING[type](componentData);
