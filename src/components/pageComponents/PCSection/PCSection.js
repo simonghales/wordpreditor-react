@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './PCSection.scss'
 import { returnChildren } from '../../../utilities/component'
+import { getStyles } from '../../../utilities/component/styles'
 
 class PCSection extends React.Component {
 
@@ -22,9 +23,10 @@ class PCSection extends React.Component {
   render() {
 
     const { data } = this.props;
+    const styles = getStyles(data);
 
     return(
-      <div className={classes['root']}>
+      <div className={classes['root']} style={styles}>
         <div className={classes['content']}>
           {this.renderChildren()}
         </div>

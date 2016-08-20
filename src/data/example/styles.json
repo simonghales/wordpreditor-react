@@ -1,5 +1,12 @@
 {
   "styles": {
+    "Main Section": {
+      "height": "100vh",
+      "backgroundColor": "#f4f5f7",
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
     "Main Heading": {
       "fontSize": "28px",
       "fontWeight": "500",

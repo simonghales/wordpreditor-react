@@ -14,32 +14,40 @@
 
 }
 
-  .icon {
-    float: left;
-    width: 46px;
-    height: 46px;
-    background-color: #000000;
-    margin-right: 10px;
+  .name-wrapper {
+    display: flex;
   }
+
+    .icon {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background-color: #000000;
+      margin-right: 5px;
+    }
+
+    .name {
+      display: inline-block;
+      color: #d0d0d0;
+      font-size: 12px;
+      line-height: 22px;
+    }
 
   .info {
-    overflow: hidden;
+    color: #777777;
+    font-size: 12px;
+    margin-top: 4px;
+
+    .count {
+      color: #999999;
+      font-weight: 500;
+    }
+
   }
 
-  .name {
-    color: #d0d0d0;
-    font-size: 12px;
-    margin-top: 2px;
-  }
+    .children {
+      margin-right: 7px;
+    }
 
-  .children {
-    color: #999999;
-    font-size: 12px;
-    margin-top: 3px;
-  }
-
-  .descendants {
-    color: #999999;
-    font-size: 12px;
-    margin-top: 3px;
-  }
+    .descendants {
+    }
