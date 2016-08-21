@@ -19,7 +19,11 @@ class ComponentEditor extends React.Component {
       let field = fields[i];
       const { type } = field;
       let fieldComponent = EDITOR_FIELDS_MAPPING[type](field);
-      fieldsComponents.push(fieldComponent);
+      fieldsComponents.push(
+        <div className={classes['field-wrapper']}>
+          {fieldComponent}
+        </div>
+      );
     }
 
     console.log("fields components", fieldsComponents);

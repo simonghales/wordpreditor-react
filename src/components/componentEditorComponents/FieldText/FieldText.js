@@ -9,10 +9,14 @@ class FieldText extends React.Component {
   }
 
   render() {
+
+    const { data } = this.props;
+    const { label } = data;
+
     return(
       <div className={classes['root']}>
-        <label>
-          <span className={classes['label']}>Field Label</span>
+        <label className={classes['label']}>
+          <span className={classes['label-text']}>{label}</span>
           <input className={classes['input']} type="text"/>
         </label>
       </div>
