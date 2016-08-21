@@ -5,13 +5,6 @@ export const EDITOR_FIELDS = {
     "label": "Main",
     "fields": [
       {
-        "id": "label",
-        "label": "Component Name",
-        "type": "text",
-        "value": "ENTER COMPONENT NAME HERE",
-        "style": false
-      },
-      {
         "id": "content",
         "label": "Content",
         "type": "text",
@@ -48,6 +41,20 @@ export const EDITOR_FIELDS = {
         "type": "text",
         "style": true,
         "styleName": "width"
+      },
+      {
+        "id": "margin",
+        "label": "Margin",
+        "type": "text",
+        "style": true,
+        "styleName": "margin"
+      },
+      {
+        "id": "padding",
+        "label": "Padding",
+        "type": "text",
+        "style": true,
+        "styleName": "padding"
       }
     ]
   }

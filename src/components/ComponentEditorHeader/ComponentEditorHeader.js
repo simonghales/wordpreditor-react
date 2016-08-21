@@ -2,9 +2,9 @@ import React from 'react'
 import classes from './ComponentEditorHeader.scss'
 
 export const ComponentEditorHeader = () => (
-  <div className={classes['ComponentEditorHeader']}>
-    <h1>ComponentEditorHeader</h1>
-  </div>
+  <header className={classes['root']}>
+    Name of Element
+  </header>
 )
 
 export default ComponentEditorHeader

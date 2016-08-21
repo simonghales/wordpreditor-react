@@ -1,5 +1,7 @@
 import React from 'react'
 import classes from './ComponentEditor.scss'
+import ComponentEditorHeader from '../ComponentEditorHeader'
+import ComponentEditorNav from '../ComponentEditorNav'
 import { EDITOR_FIELDS } from '../../constants/editor/fields'
 import { EDITOR_FIELDS_MAPPING } from '../../constants/editor/mapping'
 
@@ -36,17 +38,8 @@ class ComponentEditor extends React.Component {
 
     return (
       <div className={classes['root']}>
-        <header className={classes['header']}>
-          Name of Element
-        </header>
-        <nav className={classes['nav']}>
-          <div className={[classes['nav__link'],classes['state--active']].join(' ')}>
-            Main
-          </div>
-          <div className={classes['nav__link']}>
-            Size
-          </div>
-        </nav>
+        <ComponentEditorHeader />
+        <ComponentEditorNav />
         <div className={classes['tab-content']}>
           {this.renderFields()}
         </div>
