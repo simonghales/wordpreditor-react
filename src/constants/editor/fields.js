@@ -1,7 +1,9 @@
 
+export const EDITOR_TAB_MAIN = "main";
+export const EDITOR_TAB_SIZE = "size";
 
 export const EDITOR_FIELDS = {
-  "main": {
+  [EDITOR_TAB_MAIN]: {
     "label": "Main",
     "fields": [
       {
@@ -25,7 +27,7 @@ export const EDITOR_FIELDS = {
       }
     ]
   },
-  "size": {
+  [EDITOR_TAB_SIZE]: {
     "label": "Size",
     "fields": [
       {

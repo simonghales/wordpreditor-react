@@ -36,6 +36,8 @@ class ComponentEditor extends React.Component {
 
   render() {
 
+    console.log("what's on my props?", this.props);
+
     return (
       <div className={classes['root']}>
         <ComponentEditorHeader />
@@ -48,6 +50,10 @@ class ComponentEditor extends React.Component {
 
   }
 
+}
+
+ComponentEditor.propTypes = {
+  editor: React.PropTypes.object.isRequired
 }
 
 export default ComponentEditor

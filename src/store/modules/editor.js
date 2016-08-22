@@ -1,7 +1,11 @@
+
+import { INITIAL_STATE } from '../../constants/initialState'
+
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT'
+export const SET_SELECTED_TAB = 'SET_SELECTED_TAB'
 
 // ------------------------------------
 // Actions
@@ -10,6 +14,13 @@ export function increment (value = 1) {
   return {
     type: COUNTER_INCREMENT,
     payload: value
+  }
+}
+
+export function setSelectedTab(tab) {
+  return {
+    type: SET_SELECTED_TAB,
+    payload: { tab }
   }
 }
 
@@ -34,22 +45,31 @@ export const doubleAsync = () => {
 
 export const actions = {
   increment,
-  doubleAsync
+  doubleAsync,
+  setSelectedTab
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
+
+export function handleSetSelectedTab(state, payload) {
+  const { tab } = payload;
+  return state.set('selectedTab', tab);
+}
+
 const ACTION_HANDLERS = {
-  [COUNTER_INCREMENT]: (state, action) => state + action.payload
+  [COUNTER_INCREMENT]: (state, action) => state + action.payload,
+  [SET_SELECTED_TAB]: (state, action) => handleSetSelectedTab(state, action.payload)
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = 0
-export default function counterReducer (state = initialState, action) {
+const initialState = INITIAL_STATE.editor
+export function editorReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state
 }
+

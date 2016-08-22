@@ -1,6 +1,6 @@
 import React            from 'react'
 import classes          from './HomeView.scss'
-import ComponentEditor  from '../../../components/ComponentEditor'
+import ComponentEditor  from '../../../containers/ComponentEditor'
 import ComponentsList   from '../../../components/ComponentsList'
 import Page             from '../../../components/Page'
 
