@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './ComponentEditorNav.scss'
 import { EDITOR_FIELDS } from '../../constants/editor/fields'
-
+var classNames =            require('classnames');
 
 class ComponentEditorNav extends React.Component {
 
@@ -11,16 +11,26 @@ class ComponentEditorNav extends React.Component {
 
   renderLinks() {
 
+    const { selectedTab } = this.props;
     let linksComponents = [];
 
     for (let tab in EDITOR_FIELDS) {
 
       const tabData = EDITOR_FIELDS[tab];
 
-      const { label } = tabData;
+      const { label, id } = tabData;
+
+      let active = (id === selectedTab);
+
+      let linkClasses = classNames(
+        classes['link'],
+        {
+          [classes['state--active']]: active
+        }
+      );
 
       linksComponents.push(
-        <div className={classes['link']}>
+        <div className={linkClasses}>
           {label}
         </div>
       );
@@ -31,14 +41,9 @@ class ComponentEditorNav extends React.Component {
   }
 
   render() {
+
     return(
       <nav className={classes['root']}>
-        <div className={[classes['link'],classes['state--active']].join(' ')}>
-          Main
-        </div>
-        <div className={classes['link']}>
-          Size
-        </div>
         {this.renderLinks()}
       </nav>
     );
@@ -47,6 +52,7 @@ class ComponentEditorNav extends React.Component {
 }
 
 ComponentEditorNav.propTypes = {
+  selectedTab: React.PropTypes.string.isRequired
 }
 
 export default ComponentEditorNav

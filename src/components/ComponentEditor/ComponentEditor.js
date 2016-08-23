@@ -38,10 +38,14 @@ class ComponentEditor extends React.Component {
 
     console.log("what's on my props?", this.props);
 
+    const { editor } = this.props;
+
+    const selectedTab = editor.get('selectedTab');
+
     return (
       <div className={classes['root']}>
         <ComponentEditorHeader />
-        <ComponentEditorNav />
+        <ComponentEditorNav selectedTab={selectedTab} />
         <div className={classes['tab-content']}>
           {this.renderFields()}
         </div>
