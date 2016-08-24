@@ -14,7 +14,12 @@ class ComponentEditor extends React.Component {
 
   renderFields() {
 
-    const fields = EDITOR_FIELDS.main.fields;
+    const { editor } = this.props;
+    const selectedTab = editor.get('selectedTab');
+
+    console.log("selectedTab", selectedTab);
+
+    const fields = EDITOR_FIELDS[selectedTab].fields;
     let fieldsComponents = [];
 
     for (let i = 0, len = fields.length; i < len; i++) {
@@ -36,16 +41,16 @@ class ComponentEditor extends React.Component {
 
   render() {
 
-    console.log("what's on my props?", this.props);
+    console.log("what's on my props????", this.props);
 
-    const { editor } = this.props;
+    const { editor, setSelectedTab } = this.props;
 
     const selectedTab = editor.get('selectedTab');
 
     return (
       <div className={classes['root']}>
         <ComponentEditorHeader />
-        <ComponentEditorNav selectedTab={selectedTab} />
+        <ComponentEditorNav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className={classes['tab-content']}>
           {this.renderFields()}
         </div>
@@ -57,7 +62,8 @@ class ComponentEditor extends React.Component {
 }
 
 ComponentEditor.propTypes = {
-  editor: React.PropTypes.object.isRequired
+  editor: React.PropTypes.object.isRequired,
+  setSelectedTab: React.PropTypes.func.isRequired,
 }
 
 export default ComponentEditor

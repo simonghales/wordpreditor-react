@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { setSelectedTab } from 'store/modules/editor'
 // import {  } from 'store/modules/player'
 
 /*  This is a container component. Notice it does not contain any JSX,
@@ -13,6 +14,7 @@ import ComponentEditor from 'components/ComponentEditor'
  implementing our wrapper around increment; the component doesn't care   */
 
 const mapActionCreators = {
+  setSelectedTab
 }
 
 const mapStateToProps = (state) => ({

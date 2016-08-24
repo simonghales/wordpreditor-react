@@ -7,6 +7,15 @@ class ComponentEditorNav extends React.Component {
 
   constructor(props) {
     super(props);
+    this.setSelectedTab = this.setSelectedTab.bind(this);
+  }
+
+  setSelectedTab(id) {
+
+    const { setSelectedTab } = this.props;
+
+    setSelectedTab(id);
+
   }
 
   renderLinks() {
@@ -30,7 +39,8 @@ class ComponentEditorNav extends React.Component {
       );
 
       linksComponents.push(
-        <div className={linkClasses}>
+        <div className={linkClasses}
+             onClick={() => {this.setSelectedTab(id)}}>
           {label}
         </div>
       );
@@ -52,7 +62,8 @@ class ComponentEditorNav extends React.Component {
 }
 
 ComponentEditorNav.propTypes = {
-  selectedTab: React.PropTypes.string.isRequired
+  selectedTab: React.PropTypes.string.isRequired,
+  setSelectedTab: React.PropTypes.func.isRequired
 }
 
 export default ComponentEditorNav
