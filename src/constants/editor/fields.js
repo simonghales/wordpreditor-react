@@ -8,6 +8,12 @@ export const EDITOR_FIELDS = {
     "label": "Main",
     "fields": [
       {
+        "id": "sharedstyles",
+        "label": "Shared Styles",
+        "type": "sharedstyles",
+        "style": false
+      },
+      {
         "id": "content",
         "label": "Content",
         "type": "text",
