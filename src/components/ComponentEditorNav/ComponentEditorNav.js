@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './ComponentEditorNav.scss'
 import { EDITOR_FIELDS } from '../../constants/editor/fields'
+import ComponentEditorNavMore from '../ComponentEditorNavMore'
 var classNames =            require('classnames');
 
 class ComponentEditorNav extends React.Component {
@@ -27,7 +28,10 @@ class ComponentEditorNav extends React.Component {
 
       const tabData = EDITOR_FIELDS[tab];
 
-      const { label, id } = tabData;
+      const { label, id, mainField } = tabData;
+
+      // Only mainField tabs are rendered here
+      if(!mainField) continue;
 
       let active = (id === selectedTab);
 
@@ -55,6 +59,7 @@ class ComponentEditorNav extends React.Component {
     return(
       <nav className={classes['root']}>
         {this.renderLinks()}
+        <ComponentEditorNavMore />
       </nav>
     );
   }

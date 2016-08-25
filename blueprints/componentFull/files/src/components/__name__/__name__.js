@@ -10,7 +10,7 @@ class <%= pascalEntityName %> extends React.Component {
 
   render() {
     return(
-      <div className={classes['<%= pascalEntityName %>']}>
+      <div className={classes['root']}>
         <h1><%= pascalEntityName %></h1>
       </div>
     );

@@ -1,0 +1,17 @@
+
+@import '../../styles/variables/component-editor';
+
+.root {
+  color: #565656;
+  cursor: pointer;
+  float: left;
+  width: $component-editor-nav-more____width;
+  height: $component-editor-nav-more____height;
+  text-align: center;
+  line-height: $component-editor-nav-more____height;
+
+  &:hover {
+    color: #808080;
+  }
+
+}
