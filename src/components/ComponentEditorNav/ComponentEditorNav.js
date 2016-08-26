@@ -14,7 +14,6 @@ class ComponentEditorNav extends React.Component {
   setSelectedTab(id) {
 
     const { setSelectedTab } = this.props;
-
     setSelectedTab(id);
 
   }
@@ -54,12 +53,24 @@ class ComponentEditorNav extends React.Component {
 
   }
 
+  renderMoreLinks() {
+
+    const { selectedTab, setSelectedTab } = this.props;
+
+    return(
+      <ComponentEditorNavMore fields={EDITOR_FIELDS}
+                              selectedTab={selectedTab}
+                              setSelectedTab={setSelectedTab} />
+    );
+
+  }
+
   render() {
 
     return(
       <nav className={classes['root']}>
         {this.renderLinks()}
-        <ComponentEditorNavMore />
+        {this.renderMoreLinks()}
       </nav>
     );
   }

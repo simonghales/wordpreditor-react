@@ -1,4 +1,6 @@
 
+import * as types             from './types'
+
 export const EDITOR_TAB_MAIN = "main";
 export const EDITOR_TAB_SIZE = "size";
 export const EDITOR_TAB_STYLING = "styling";
@@ -30,19 +32,19 @@ export const EDITOR_FIELDS = {
       {
         "id": EDITOR_FIELD_SHARED_STYLES,
         "label": "Shared Styles",
-        "type": "sharedstyles",
+        "type": types.FIELD_SHARED_STYLES,
         "style": false
       },
       {
         "id": EDITOR_FIELD_SHARED_CONTENT,
         "label": "Content",
-        "type": "text",
+        "type": types.FIELD_TEXT,
         "style": false
       },
       {
         "id": EDITOR_FIELD_SHARED_LINK,
         "label": "Link",
-        "type": "text",
+        "type": types.FIELD_LINK,
         "style": false
       }
     ]

@@ -7,11 +7,32 @@
   float: left;
   width: $component-editor-nav-more____width;
   height: $component-editor-nav-more____height;
+  position: relative;
   text-align: center;
   line-height: $component-editor-nav-more____height;
 
+  &::after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    background-color: #DF0063;
+  }
+
   &:hover {
     color: #808080;
+  }
+
+  &.state--selected {
+    color: #ffffff;
+
+    &::after {
+      display: block;
+    }
+
   }
 
 }
