@@ -15,12 +15,20 @@ class FieldLink extends React.Component {
 
     return(
       <div className={classes['root']}>
-        <label className={classes['label']}>
-          <span className={classes['label-text']}>{label}</span>
-          <input className={classes['input']} type="text"/>
+        <label className={classes['main-label']}>
+          <span className={classes['main-label-text']}>
+            <span>
+              {label}
+            </span>
+            <label className={classes['extra-option']}>
+              <span className={classes['extra-option__label']}>Open link in new tab</span>
+              <input className={classes['extra-option__input']} type="checkbox" checked="true"/>
+            </label>
+          </span>
+          <input className={classes['main-input']} type="text"/>
         </label>
-        <div>Link option 1</div>
-        <div>Link option 2</div>
+        <div>
+        </div>
       </div>
     );
   }

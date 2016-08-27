@@ -1,0 +1,65 @@
+%field-layout-side {
+  display: flex;
+  padding: 0 10px;
+}
+
+  %field-layout-side__label-wrapper {
+    min-width: 60px;
+  }
+
+  %field-layout-side__options {
+    flex: 1;
+    padding-top: 2px;
+  }
+
+    %field-layout-side__options__row {
+      display: flex;
+      margin-top: 10px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+    }
+
+    %field-layout-side__option-multi {
+      padding: 0 3px;
+
+      &:first-of-type {
+        padding: 0 4px 0 0;
+      }
+
+      &:last-of-type {
+        padding: 0 0 0 4px;
+      }
+
+    }
+
+    %field-layout-side__option-half {
+      width: 50%;
+
+      &:first-of-type {
+        padding-right: 5px;
+      }
+
+      &:last-of-type {
+        padding-left: 5px;
+      }
+
+    }
+
+    %field-layout-side__option__label {
+      font-size: 11px;
+      color: #606060;
+      text-align: center;
+      display: block;
+      padding-top: 3px;
+    }
+
+    %field-layout__extra-option {
+      padding-left: 7px;
+    }
+
+      %field-layout__extra-option__input {
+        margin-left: 5px;
+      }

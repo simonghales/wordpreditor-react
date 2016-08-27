@@ -70,7 +70,7 @@ class ComponentEditorNav extends React.Component {
     return(
       <nav className={classes['root']}>
         {this.renderLinks()}
-        {this.renderMoreLinks()}
+        {/*{this.renderMoreLinks()}*/}
       </nav>
     );
   }

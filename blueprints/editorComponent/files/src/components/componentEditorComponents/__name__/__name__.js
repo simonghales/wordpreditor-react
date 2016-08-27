@@ -9,9 +9,16 @@ class <%= pascalEntityName %> extends React.Component {
   }
 
   render() {
+
+    const { data } = this.props;
+    const { label } = data;
+
     return(
       <div className={classes['root']}>
-        <input type="text" />
+        <label className={classes['label']}>
+          <span className={classes['label-text']}>{label}</span>
+          <input className={classes['input']} type="text"/>
+        </label>
       </div>
     );
   }

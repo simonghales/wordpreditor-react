@@ -1,2 +1,21 @@
+
+@import '../../../styles/mixins/default';
+@import '../../../styles/shared/labels';
+@import '../../../styles/shared/inputs';
+
 .root {
+
 }
+
+  .label {
+    display: block;
+    padding: 0 10px;
+  }
+
+    .label-text {
+      @extend %label-dark;
+    }
+
+    .input {
+      @extend %dark-input;
+    }

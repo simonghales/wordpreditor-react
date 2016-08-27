@@ -1,0 +1,44 @@
+
+@import '../../../styles/mixins/default';
+@import '../../../styles/shared/labels';
+@import '../../../styles/shared/field';
+@import '../../../styles/shared/inputs';
+
+.root {
+  padding: 0 10px;
+}
+
+.main-label-wrapper {
+}
+
+.label-text {
+  @extend %label-dark;
+}
+
+.input {
+  @extend %dark-input;
+}
+
+.options {
+  display: flex;
+}
+
+.option {
+  @extend %field-layout-side__option-multi;
+}
+
+.option__label {
+  @extend %field-layout-side__option__label;
+}
+
+.extra-option {
+  @extend %field-layout__extra-option;
+}
+
+.extra-option__label {
+  @extend %label-small-dark;
+}
+
+.extra-option__input {
+  @extend %field-layout__extra-option__input;
+}

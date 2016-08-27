@@ -2,26 +2,24 @@
 import * as types             from './types'
 
 export const EDITOR_TAB_MAIN = "main";
-export const EDITOR_TAB_SIZE = "size";
 export const EDITOR_TAB_STYLING = "styling";
 export const EDITOR_TAB_SPACING = "spacing";
 export const EDITOR_TAB_LAYOUT = "layout";
 export const EDITOR_TAB_CUSTOM = "custom";
 
 export const EDITOR_FIELD_SHARED_STYLES = "sharedstyles";
-export const EDITOR_FIELD_SHARED_CONTENT = "content";
-export const EDITOR_FIELD_SHARED_LINK = "link";
-export const EDITOR_FIELD_SHARED_HEIGHT = "height";
-export const EDITOR_FIELD_SHARED_WIDTH = "width";
-export const EDITOR_FIELD_SHARED_COLOR = "color";
-export const EDITOR_FIELD_SHARED_BACKGROUND_COLOR = "backgroundcolor";
-export const EDITOR_FIELD_SHARED_BORDER = "border";
-export const EDITOR_FIELD_SHARED_BORDER_RADIUS = "borderradius";
-export const EDITOR_FIELD_SHARED_SHADOW = "shadow";
-export const EDITOR_FIELD_SHARED_PADDING = "padding";
-export const EDITOR_FIELD_SHARED_MARGIN = "margin";
-export const EDITOR_FIELD_SHARED_LAYOUT = "layout";
-export const EDITOR_FIELD_SHARED_CUSTOM = "custom";
+export const EDITOR_FIELD_CONTENT = "content";
+export const EDITOR_FIELD_LINK = "link";
+export const EDITOR_FIELD_SIZE = "size";
+export const EDITOR_FIELD_COLOR = "color";
+export const EDITOR_FIELD_BACKGROUND_COLOR = "backgroundcolor";
+export const EDITOR_FIELD_BORDER = "border";
+export const EDITOR_FIELD_BORDER_RADIUS = "borderradius";
+export const EDITOR_FIELD_SHADOW = "shadow";
+export const EDITOR_FIELD_PADDING = "padding";
+export const EDITOR_FIELD_MARGIN = "margin";
+export const EDITOR_FIELD_LAYOUT = "layout";
+export const EDITOR_FIELD_CUSTOM = "custom";
 
 export const EDITOR_FIELDS = {
   [EDITOR_TAB_MAIN]: {
@@ -32,41 +30,17 @@ export const EDITOR_FIELDS = {
       {
         "id": EDITOR_FIELD_SHARED_STYLES,
         "label": "Shared Styles",
-        "type": types.FIELD_SHARED_STYLES,
-        "style": false
+        "type": types.FIELD_SHARED_STYLES
       },
       {
-        "id": EDITOR_FIELD_SHARED_CONTENT,
+        "id": EDITOR_FIELD_CONTENT,
         "label": "Content",
-        "type": types.FIELD_TEXT,
-        "style": false
+        "type": types.FIELD_TEXT
       },
       {
-        "id": EDITOR_FIELD_SHARED_LINK,
+        "id": EDITOR_FIELD_LINK,
         "label": "Link",
-        "type": types.FIELD_LINK,
-        "style": false
-      }
-    ]
-  },
-  [EDITOR_TAB_SIZE]: {
-    "id": EDITOR_TAB_SIZE,
-    "label": "Size",
-    "mainField": true,
-    "fields": [
-      {
-        "id": EDITOR_FIELD_SHARED_HEIGHT,
-        "label": "Height",
-        "type": "text",
-        "style": true,
-        "styleName": "height"
-      },
-      {
-        "id": EDITOR_FIELD_SHARED_WIDTH,
-        "label": "Width",
-        "type": "text",
-        "style": true,
-        "styleName": "width"
+        "type": types.FIELD_LINK
       }
     ]
   },
@@ -76,39 +50,24 @@ export const EDITOR_FIELDS = {
     "mainField": true,
     "fields": [
       {
-        "id": EDITOR_FIELD_SHARED_COLOR,
-        "label": "Text Color",
-        "type": "text",
-        "style": true,
-        "styleName": "color"
+        "id": EDITOR_FIELD_COLOR,
+        "label": "Color",
+        "type": types.FIELD_COLOR
       },
       {
-        "id": EDITOR_FIELD_SHARED_BACKGROUND_COLOR,
-        "label": "Background Color",
-        "type": "text",
-        "style": true,
-        "styleName": "backgroundColor"
-      },
-      {
-        "id": EDITOR_FIELD_SHARED_BORDER,
+        "id": EDITOR_FIELD_BORDER,
         "label": "Border",
-        "type": "text",
-        "style": true,
-        "styleName": "border"
+        "type": types.FIELD_BORDER
       },
       {
-        "id": EDITOR_FIELD_SHARED_BORDER_RADIUS,
+        "id": EDITOR_FIELD_BORDER_RADIUS,
         "label": "Border Radius",
-        "type": "text",
-        "style": true,
-        "styleName": "borderRadius"
+        "type": types.FIELD_BORDER_RADIUS
       },
       {
-        "id": EDITOR_FIELD_SHARED_SHADOW,
+        "id": EDITOR_FIELD_SHADOW,
         "label": "Shadow",
-        "type": "text",
-        "style": true,
-        "styleName": "boxShadow"
+        "type": types.FIELD_SHADOW
       }
     ]
   },
@@ -118,18 +77,19 @@ export const EDITOR_FIELDS = {
     "mainField": true,
     "fields": [
       {
-        "id": EDITOR_FIELD_SHARED_PADDING,
-        "label": "Padding",
-        "type": "text",
-        "style": true,
-        "styleName": "padding"
+        "id": EDITOR_FIELD_SIZE,
+        "label": "Size",
+        "type": types.FIELD_SIZE
       },
       {
-        "id": EDITOR_FIELD_SHARED_MARGIN,
+        "id": EDITOR_FIELD_PADDING,
+        "label": "Padding",
+        "type": types.FIELD_PADDING
+      },
+      {
+        "id": EDITOR_FIELD_MARGIN,
         "label": "Margin",
-        "type": "text",
-        "style": true,
-        "styleName": "margin"
+        "type": types.FIELD_MARGIN
       }
     ]
   },
@@ -139,24 +99,21 @@ export const EDITOR_FIELDS = {
     "mainField": true,
     "fields": [
       {
-        "id": EDITOR_FIELD_SHARED_LAYOUT,
+        "id": EDITOR_FIELD_LAYOUT,
         "label": "Layout",
-        "type": "text",
-        "style": false
+        "type": types.FIELD_TEXT
       }
     ]
   },
   [EDITOR_TAB_CUSTOM]: {
     "id": EDITOR_TAB_CUSTOM,
     "label": "Custom",
-    "mainField": false,
+    "mainField": true,
     "fields": [
       {
-        "id": EDITOR_FIELD_SHARED_CUSTOM,
+        "id": EDITOR_FIELD_CUSTOM,
         "label": "Custom",
-        "type": "text",
-        "style": true,
-        "styleName": "custom"
+        "type": types.FIELD_TEXT
       }
     ]
   }
