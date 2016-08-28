@@ -1,43 +1,81 @@
 
+@import '../../styles/mixins/default';
 @import '../../styles/shared/common';
 
-$side-padding: 8px;
+$side-padding: 6px;
 .root {
   @extend .clearfix;
   color: #a0a0a0;
   font-size: 13px;
 
   // todo - determine suitable depth level, is 20 enough? too little?
-  @for $i from 1 through 20 {
+  //@for $i from 1 through 20 {
+  //
+  //  &.level--#{$i} {
+  //
+  //    > .main {
+  //      padding-left: $side-padding * $i;
+  //    }
+  //
+  //  }
+  //
+  //}
 
-    &.level--#{$i} {
+  &.shaded {
 
-      > .main {
-        padding-left: $side-padding * $i;
-      }
-
+    > .children-container {
+      background-color: #191919;
     }
 
   }
 
-  &.shaded {
-    background: red;
+  &.not-shaded {
+
+    > .children-container {
+      background-color: #222222;
+    }
+
   }
 
-  &.not-shaded {
-    background: blue;
+  &.type--PCSection > .main .folder-icon {
+    visibility: visible;
   }
 
 }
 
   .main {
     padding: 4px 0;
+    position: relative;
+
+    &:hover {
+
+      .name {
+        color: #d0d0d0;
+      }
+
+      .trash-icon {
+        visibility: visible;
+      }
+
+    }
+
   }
 
   .name-wrapper {
     cursor: pointer;
     display: flex;
+    padding-right: 24px;
   }
+
+    .folder-icon {
+      display: inline-block;
+      font-size: 14px;
+      color: #606060;
+      margin: 0 1px 0 1px;
+      line-height: 22px;
+
+      visibility: hidden;
+    }
 
     .icon {
       color: #606060;
@@ -47,21 +85,34 @@ $side-padding: 8px;
       margin-right: 2px;
       text-align: center;
       line-height: 22px;
-      margin-left: 10px;
     }
 
     .name {
       display: inline-block;
-      color: #d0d0d0;
+      color: #999999;
       font-size: 12px;
       line-height: 22px;
     }
 
+  .trash-icon {
+    color: #565656;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    visibility: hidden;
+
+    &:hover {
+      color: #a0a0a0;
+    }
+
+  }
+
   .info {
     color: #606060;
     font-size: 11px;
-    margin-top: 2px;
-    padding-left: 4px + 10px;
+    padding-left: 5px + 10px;
+    padding-bottom: 2px;
 
     .count {
       color: #666666;
@@ -71,10 +122,15 @@ $side-padding: 8px;
   }
 
     .children-container {
-      //padding-left: 8px;
+      @include border-radius(3px 0 0 3px);
+      padding-left: $side-padding;
+      padding-bottom: $side-padding;
 
       .main {
         //padding-left: 8px;
+      }
+
+      .root {
       }
 
     }

@@ -7,7 +7,17 @@ export function areChildrenAllowed(type) {
   return COMPONENT_TYPES_SETTINGS[type].childrenAllowed;
 }
 
-export function isComponentShaded(childIndex, parentShaded) {
+export function isComponentShaded(level) {
+
+  let levelOdd = ((level + 1) % 2) ? true : false;
+
+  return levelOdd;
+}
+
+// old
+export function isComponentOddShaded(childIndex, parentShaded) {
+
+  console.log(childIndex, parentShaded);
 
   let childOdd = ((childIndex + 1) % 2) ? true : false;
 

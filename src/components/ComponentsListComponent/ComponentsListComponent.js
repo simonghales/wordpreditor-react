@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './ComponentsListComponent.scss'
 import { isComponentShaded, returnComponentIcon, returnComponentChildrenCount, returnComponentDescendantsCount } from '../../utilities/component'
 var classNames =            require('classnames');
+var FontAwesome = require('react-fontawesome');
 
 class ComponentsListComponent extends React.Component {
 
@@ -43,8 +44,7 @@ class ComponentsListComponent extends React.Component {
 
     let childComponents = [];
 
-    let parentOdd = ((childIndex) % 2) ? true : false;
-    let shaded = isComponentShaded(childIndex, parentOdd, parentShaded);
+    let shaded = isComponentShaded(level);
 
     for(let i = 0, len = children.length; i < len; i++) {
       let child = children[i];
@@ -72,13 +72,15 @@ class ComponentsListComponent extends React.Component {
 
     const { childIndex, data, level, parentShaded } = this.props;
 
-    const { label } = data;
+    const { label, type } = data;
 
-    let shaded = isComponentShaded(childIndex, parentShaded);
+    console.log("comp: " + label);
+    let shaded = isComponentShaded(level);
 
     let rootClasses = classNames(
       classes['root'],
       classes['level--' + level],
+      classes['type--' + type],
       {
         [classes['shaded']]: shaded,
         [classes['not-shaded']]: !shaded,
@@ -89,10 +91,16 @@ class ComponentsListComponent extends React.Component {
       <div className={rootClasses}>
         <div className={classes['main']}>
           <div className={classes['name-wrapper']}>
+            <span className={classes['folder-icon']}>
+              <FontAwesome name='caret-down' />
+            </span>
             <span className={classes['icon']}>
               {this.renderIcon()}
             </span>
             <span className={classes['name']}>{label}</span>
+          </div>
+          <div className={classes['trash-icon']}>
+            <FontAwesome name='trash' />
           </div>
           {this.renderChildInfo()}
         </div>
