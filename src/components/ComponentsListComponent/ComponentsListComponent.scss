@@ -1,5 +1,6 @@
 
 @import '../../styles/mixins/default';
+@import '../../styles/variables/colors';
 @import '../../styles/shared/common';
 
 $side-padding: 6px;
@@ -20,6 +21,22 @@ $side-padding: 6px;
   //  }
   //
   //}
+
+  &.selected {
+
+    > .main {
+
+      .icon {
+        color: $clr-active;
+      }
+
+      .name {
+        color: #d0d0d0;
+      }
+
+    }
+
+  }
 
   &.shaded {
 
@@ -44,6 +61,7 @@ $side-padding: 6px;
 }
 
   .main {
+    cursor: pointer;
     padding: 4px 0;
     position: relative;
 
@@ -62,7 +80,6 @@ $side-padding: 6px;
   }
 
   .name-wrapper {
-    cursor: pointer;
     display: flex;
     padding-right: 24px;
   }

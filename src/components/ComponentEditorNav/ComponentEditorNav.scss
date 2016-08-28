@@ -1,5 +1,6 @@
 
 @import '../../styles/mixins/default';
+@import '../../styles/variables/colors';
 @import '../../styles/shared/common';
 
 .root {
@@ -25,7 +26,7 @@
     bottom: 0;
     right: 0;
     height: 2px;
-    background-color: #DF0063;
+    background-color: $clr-active;
   }
 
   &:hover {

@@ -5,6 +5,7 @@ import { INITIAL_STATE } from '../../constants/initialState'
 // Constants
 // ------------------------------------
 export const COUNTER_INCREMENT = 'COUNTER_INCREMENT'
+export const SET_SELECTED_COMPONENT = 'SET_SELECTED_COMPONENT'
 export const SET_SELECTED_TAB = 'SET_SELECTED_TAB'
 
 // ------------------------------------
@@ -14,6 +15,13 @@ export function increment (value = 1) {
   return {
     type: COUNTER_INCREMENT,
     payload: value
+  }
+}
+
+export function setSelectedComponent(component) {
+  return {
+    type: SET_SELECTED_COMPONENT,
+    payload: { component }
   }
 }
 
@@ -46,12 +54,18 @@ export const doubleAsync = () => {
 export const actions = {
   increment,
   doubleAsync,
-  setSelectedTab
+  setSelectedComponent,
+  setSelectedTab,
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
+
+export function handleSetSelectedComponent(state, payload) {
+  const { component } = payload;
+  return state.set('selectedComponent', component);
+}
 
 export function handleSetSelectedTab(state, payload) {
   const { tab } = payload;
@@ -60,7 +74,8 @@ export function handleSetSelectedTab(state, payload) {
 
 const ACTION_HANDLERS = {
   [COUNTER_INCREMENT]: (state, action) => state + action.payload,
-  [SET_SELECTED_TAB]: (state, action) => handleSetSelectedTab(state, action.payload)
+  [SET_SELECTED_COMPONENT]: (state, action) => handleSetSelectedComponent(state, action.payload),
+  [SET_SELECTED_TAB]: (state, action) => handleSetSelectedTab(state, action.payload),
 }
 
 // ------------------------------------

@@ -17,8 +17,6 @@ class ComponentEditor extends React.Component {
     const { editor } = this.props;
     const selectedTab = editor.get('selectedTab');
 
-    console.log("selectedTab", selectedTab);
-
     const fields = EDITOR_FIELDS[selectedTab].fields;
     let fieldsComponents = [];
 
@@ -33,23 +31,20 @@ class ComponentEditor extends React.Component {
       );
     }
 
-    console.log("fields components", fieldsComponents);
-
     return fieldsComponents;
 
   }
 
   render() {
 
-    console.log("what's on my props????", this.props);
-
     const { editor, setSelectedTab } = this.props;
 
+    const selectedComponent = editor.get('selectedComponent');
     const selectedTab = editor.get('selectedTab');
 
     return (
       <div className={classes['root']}>
-        <ComponentEditorHeader />
+        <ComponentEditorHeader selectedComponent={selectedComponent} />
         <ComponentEditorNav selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
         <div className={classes['tab-content']}>
           {this.renderFields()}

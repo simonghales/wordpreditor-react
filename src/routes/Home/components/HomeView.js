@@ -1,7 +1,7 @@
 import React            from 'react'
 import classes          from './HomeView.scss'
 import ComponentEditor  from '../../../containers/ComponentEditor'
-import ComponentsList   from '../../../components/ComponentsList'
+import ComponentsList   from '../../../containers/ComponentsList'
 import Page             from '../../../components/Page'
 
 export const HomeView = () => (

@@ -1,24 +1,28 @@
 {
   "components": [
     {
+      "id": 0,
       "type": "PCSection",
       "styles": "Main Section",
       "label": "Intro",
       "content": "",
       "children": [
         {
+          "id": 1,
           "type": "PCHeading",
           "styles": "Main Heading",
           "label": "Main Heading",
           "content": "Simon Hales"
         },
         {
+          "id": 2,
           "type": "PCHeading",
           "styles": "Sub Heading",
           "label": "Sub Heading",
           "content": "Front End Developer"
         },
         {
+          "id": 3,
           "type": "PCParagraph",
           "styles": "Main Text",
           "label": "Special description",
@@ -27,36 +31,42 @@
       ]
     },
     {
+      "id": 4,
       "type": "PCSection",
       "styles": "default",
       "label": "Second Section",
       "content": "",
       "children": [
         {
+          "id": 5,
           "type": "PCHeading",
           "styles": "default",
           "label": "Main Heading",
           "content": "Simon Hales"
         },
         {
+          "id": 6,
           "type": "PCHeading",
           "styles": "default",
           "label": "Sub Heading",
           "content": "Front End Developer"
         },
         {
+          "id": 7,
           "type": "PCSection",
           "styles": "default",
           "label": "Second Section",
           "content": "",
           "children": [
             {
+              "id": 8,
               "type": "PCHeading",
               "styles": "default",
               "label": "Main Heading",
               "content": "Simon Hales"
             },
             {
+              "id": 9,
               "type": "PCHeading",
               "styles": "default",
               "label": "Sub Heading",

@@ -14,13 +14,22 @@ class ComponentsList extends React.Component {
 
     renderComponents() {
 
+        const { editor, setSelectedComponent } = this.props;
+
+        const selectedComponent = editor.get('selectedComponent');
+
         let componentsHTML = [];
 
         for (var i = 0, len = components.length; i < len; i++) {
             let component = components[i];
             componentsHTML.push(
               <div className={classes['component-container']}>
-                  <ComponentsListComponent data={component} level={0} childIndex={i} parentShaded={true} />
+                  <ComponentsListComponent data={component}
+                                           level={0}
+                                           childIndex={i}
+                                           parentShaded={true}
+                                           selectedComponent={selectedComponent}
+                                           setSelectedComponent={setSelectedComponent} />
               </div>
             );
         }
@@ -43,6 +52,11 @@ class ComponentsList extends React.Component {
         );
     }
 
+}
+
+ComponentsList.propTypes = {
+  editor: React.PropTypes.object.isRequired,
+  setSelectedComponent: React.PropTypes.func.isRequired,
 }
 
 export default ComponentsList

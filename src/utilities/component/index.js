@@ -7,6 +7,14 @@ export function areChildrenAllowed(type) {
   return COMPONENT_TYPES_SETTINGS[type].childrenAllowed;
 }
 
+export function isComponentSelected(component, selectedComponent) {
+
+  if(!selectedComponent) return false;
+
+  return (component.id === selectedComponent.id);
+
+}
+
 export function isComponentShaded(level) {
 
   let levelOdd = ((level + 1) % 2) ? true : false;

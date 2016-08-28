@@ -1,6 +1,9 @@
 import React from 'react'
 import classes from './ComponentsListComponent.scss'
-import { isComponentShaded, returnComponentIcon, returnComponentChildrenCount, returnComponentDescendantsCount } from '../../utilities/component'
+import { isComponentShaded, isComponentSelected,
+  returnComponentIcon,
+  returnComponentChildrenCount,
+  returnComponentDescendantsCount } from '../../utilities/component'
 var classNames =            require('classnames');
 var FontAwesome = require('react-fontawesome');
 
@@ -8,6 +11,15 @@ class ComponentsListComponent extends React.Component {
 
   constructor(props) {
     super(props);
+    this.selectComponent = this.selectComponent.bind(this);
+  }
+
+  selectComponent() {
+
+    const { data, setSelectedComponent } = this.props;
+
+    setSelectedComponent(data);
+
   }
 
   renderChildInfo() {
@@ -36,7 +48,7 @@ class ComponentsListComponent extends React.Component {
 
   renderChildComponents() {
 
-    const { childIndex, data, level, parentShaded } = this.props;
+    const { data, level, selectedComponent, setSelectedComponent } = this.props;
 
     const { children } = data;
 
@@ -51,7 +63,9 @@ class ComponentsListComponent extends React.Component {
       childComponents.push(
         <ComponentsListComponent data={child} level={level + 1}
                                  childIndex={i}
-                                 parentShaded={shaded} />
+                                 parentShaded={shaded}
+                                 selectedComponent={selectedComponent}
+                                 setSelectedComponent={setSelectedComponent} />
       );
     }
 
@@ -70,18 +84,19 @@ class ComponentsListComponent extends React.Component {
 
   render() {
 
-    const { childIndex, data, level, parentShaded } = this.props;
+    const { data, level, selectedComponent } = this.props;
 
     const { label, type } = data;
 
-    console.log("comp: " + label);
     let shaded = isComponentShaded(level);
+    let selected = isComponentSelected(data, selectedComponent);
 
     let rootClasses = classNames(
       classes['root'],
       classes['level--' + level],
       classes['type--' + type],
       {
+        [classes['selected']]: selected,
         [classes['shaded']]: shaded,
         [classes['not-shaded']]: !shaded,
       }
@@ -89,7 +104,7 @@ class ComponentsListComponent extends React.Component {
 
     return(
       <div className={rootClasses}>
-        <div className={classes['main']}>
+        <div className={classes['main']} onClick={this.selectComponent}>
           <div className={classes['name-wrapper']}>
             <span className={classes['folder-icon']}>
               <FontAwesome name='caret-down' />
@@ -116,6 +131,8 @@ ComponentsListComponent.propTypes = {
   data: React.PropTypes.object.isRequired,
   level: React.PropTypes.number.isRequired,
   parentShaded: React.PropTypes.bool.isRequired,
+  selectedComponent: React.PropTypes.object.isRequired,
+  setSelectedComponent: React.PropTypes.func.isRequired,
 }
 
 export default ComponentsListComponent
