@@ -18,13 +18,11 @@ class ComponentsList extends React.Component {
 
         for (var i = 0, len = components.length; i < len; i++) {
             let component = components[i];
-
             componentsHTML.push(
               <div className={classes['component-container']}>
-                  <ComponentsListComponent data={component} />
+                  <ComponentsListComponent data={component} level={0} childIndex={i} parentShaded={true} />
               </div>
             );
-
         }
 
         return componentsHTML;

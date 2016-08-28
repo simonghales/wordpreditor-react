@@ -1,29 +1,53 @@
 
 @import '../../styles/shared/common';
 
+$side-padding: 8px;
 .root {
   @extend .clearfix;
   color: #a0a0a0;
-  cursor: pointer;
   font-size: 13px;
-  padding: 10px;
 
-  &:hover {
-    background-color: #101010;
+  // todo - determine suitable depth level, is 20 enough? too little?
+  @for $i from 1 through 20 {
+
+    &.level--#{$i} {
+
+      > .main {
+        padding-left: $side-padding * $i;
+      }
+
+    }
+
+  }
+
+  &.shaded {
+    background: red;
+  }
+
+  &.not-shaded {
+    background: blue;
   }
 
 }
 
+  .main {
+    padding: 4px 0;
+  }
+
   .name-wrapper {
+    cursor: pointer;
     display: flex;
   }
 
     .icon {
+      color: #606060;
       display: inline-block;
       width: 22px;
       height: 22px;
-      background-color: #000000;
-      margin-right: 5px;
+      margin-right: 2px;
+      text-align: center;
+      line-height: 22px;
+      margin-left: 10px;
     }
 
     .name {
@@ -34,16 +58,26 @@
     }
 
   .info {
-    color: #777777;
-    font-size: 12px;
-    margin-top: 4px;
+    color: #606060;
+    font-size: 11px;
+    margin-top: 2px;
+    padding-left: 4px + 10px;
 
     .count {
-      color: #999999;
+      color: #666666;
       font-weight: 500;
     }
 
   }
+
+    .children-container {
+      //padding-left: 8px;
+
+      .main {
+        //padding-left: 8px;
+      }
+
+    }
 
     .children {
       margin-right: 7px;

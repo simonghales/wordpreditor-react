@@ -27,7 +27,7 @@
         {
           "type": "PCSection",
           "styles": "default",
-          "label": "Intro",
+          "label": "Second Section",
           "content": "",
           "children": [
             {
@@ -45,7 +45,7 @@
             {
               "type": "PCSection",
               "styles": "default",
-              "label": "Intro",
+              "label": "Second Section",
               "content": "",
               "children": [
                 {
@@ -59,8 +59,52 @@
                   "styles": "default",
                   "label": "Sub Heading",
                   "content": "Front End Developer"
+                },
+                {
+                  "type": "PCHeading",
+                  "styles": "default",
+                  "label": "Sub Heading",
+                  "content": "Front End Developer"
+                },
+                {
+                  "type": "PCHeading",
+                  "styles": "default",
+                  "label": "Sub Heading",
+                  "content": "Front End Developer"
+                },
+                {
+                  "type": "PCSection",
+                  "styles": "default",
+                  "label": "Second Section",
+                  "content": "",
+                  "children": [
+                    {
+                      "type": "PCHeading",
+                      "styles": "default",
+                      "label": "Main Heading",
+                      "content": "Simon Hales"
+                    },
+                    {
+                      "type": "PCHeading",
+                      "styles": "default",
+                      "label": "Sub Heading",
+                      "content": "Front End Developer"
+                    }
+                  ]
                 }
               ]
+            },
+            {
+              "type": "PCHeading",
+              "styles": "default",
+              "label": "Sub Heading",
+              "content": "Front End Developer"
+            },
+            {
+              "type": "PCHeading",
+              "styles": "default",
+              "label": "Sub Heading",
+              "content": "Front End Developer"
             }
           ]
         }
