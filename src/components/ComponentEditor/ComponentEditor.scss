@@ -8,12 +8,12 @@
   position: fixed;
   top: 300px;
   left: 300px;
-  width: $component-editor____width;
   height: 350px;
-  background-color: #242627;
-  border: 1px solid #000000;
+  width: $component-editor____width;
+  background-color: $component-editor____bg-color;
+  border: 1px solid $component-editor____border-color;
 }
 
-    .field-wrapper {
-      margin-top: 7px;
-    }
+  .field-wrapper {
+    margin-top: 7px;
+  }

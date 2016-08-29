@@ -6,11 +6,19 @@
   display: block;
 }
 
+  %ml-header {
+    width: $header____width;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
   %ml-components-list-container {
     width: $components-list-container____width;
     position: fixed;
-    top: $header____height;
-    left: 0;
+    top: 0;
+    left: $header____width;
     bottom: 0;
   }
 

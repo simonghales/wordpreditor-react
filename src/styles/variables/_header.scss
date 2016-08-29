@@ -1,2 +1,7 @@
+
+@import './colors';
+
 $header____height: 48px;
-$header____bg-color: #222222;
+$header____elem-width: 40px;
+$header____width: $header____elem-width + 1;
+$header____bg-color: $clr-darkerShade;
