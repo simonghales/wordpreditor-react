@@ -1,0 +1,37 @@
+
+@import '../../styles/variables/colors';
+@import '../../styles/mixins/default';
+
+.root {
+  background-color: #151515;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+
+  //
+  margin-top: 80px;
+
+  .component {
+    margin: 4px 0 4px 4px;
+  }
+
+}
+
+.component {
+  @include border-radius(3px);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  background-color: #222222;
+  color: #606060;
+
+  &:hover {
+    color: $clr-active;
+  }
+
+  &:active {
+    background-color: #2f2f2f;
+  }
+
+}

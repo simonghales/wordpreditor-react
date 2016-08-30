@@ -18,4 +18,8 @@
     outline: none;
   }
 
+  @include placeholder {
+    color: #3f3f3f;
+  }
+
 }

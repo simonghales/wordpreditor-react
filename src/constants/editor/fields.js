@@ -12,14 +12,13 @@ export const EDITOR_FIELD_CONTENT = "content";
 export const EDITOR_FIELD_LINK = "link";
 export const EDITOR_FIELD_SIZE = "size";
 export const EDITOR_FIELD_COLOR = "color";
-export const EDITOR_FIELD_BACKGROUND_COLOR = "backgroundcolor";
 export const EDITOR_FIELD_BORDER = "border";
 export const EDITOR_FIELD_BORDER_RADIUS = "borderradius";
 export const EDITOR_FIELD_SHADOW = "shadow";
 export const EDITOR_FIELD_PADDING = "padding";
 export const EDITOR_FIELD_MARGIN = "margin";
 export const EDITOR_FIELD_LAYOUT = "layout";
-export const EDITOR_FIELD_CUSTOM = "custom";
+export const EDITOR_FIELD_CUSTOM_CLASSES = "customclasses";
 
 export const EDITOR_FIELDS = {
   [EDITOR_TAB_MAIN]: {
@@ -111,8 +110,8 @@ export const EDITOR_FIELDS = {
     "mainField": true,
     "fields": [
       {
-        "id": EDITOR_FIELD_CUSTOM,
-        "label": "Custom",
+        "id": EDITOR_FIELD_CUSTOM_CLASSES,
+        "label": "Classes",
         "type": types.FIELD_TEXT
       }
     ]
