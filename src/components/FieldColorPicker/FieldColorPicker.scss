@@ -5,7 +5,7 @@ $color-swatch__size: 19px;
 .root {
   position: relative;
 
-  input {
+  > label input {
     padding-left: $color-swatch__size + 6px;
   }
 
@@ -23,11 +23,10 @@ $color-swatch__size: 19px;
 }
 
 .picker {
-  background-color: #ffffff;
   position: absolute;
   left: 0;
   top: 30px;
-  width: 200px;
+  width: 225px;
   height: 200px;
   z-index: 1000;
 }

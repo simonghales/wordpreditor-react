@@ -7,39 +7,57 @@ class FieldColor extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      color: '#000000',
+      backgroundColor: '#000000'
+    };
+
+  }
+
+  handleColorChange = (color) => {
+    this.setState({
+      color: color
+    });
+    console.log("color updated", color);
+  }
+
+  handleBackgroundColorChange = (color) => {
+    this.setState({
+      backgroundColor: color
+    });
+    console.log("backgroundcolor updated", color);
   }
 
   render() {
 
     const { data } = this.props;
     const { label } = data;
+    const { backgroundColor, color } = this.state;
 
     return(
       <div className={classes['root']}>
-
-        {/*<div>*/}
-          {/*/!*<ColorPicker />*!/*/}
-          {/*<div>Color Picker</div>*/}
-        {/*</div>*/}
-
         <div className={classes['main-label-wrapper']}>
           <label className={classes['label-text']}>{label}</label>
         </div>
         <div className={classes['options']}>
           <div className={classes['options-row']}>
-            <label className={classes['option']}>
-              <FieldColorPicker>
-                <input className={classes['input']} type="text" placeholder="#000000"/>
-                <span className={classes['option__label']}>Text</span>
+            <div className={classes['option']}>
+              <FieldColorPicker defaultColor={color} handleColorChange={this.handleColorChange}>
+                <label>
+                  <input className={classes['input']} type="text" value={color} />
+                  <span className={classes['option__label']}>Text</span>
+                </label>
               </FieldColorPicker>
-            </label>
-            <label className={classes['option']}>
-              <FieldColorPicker>
-                <input className={classes['input']} type="text" placeholder="#000000"/>
-                <div className={classes['color-swatch']}></div>
-                <span className={classes['option__label']}>Background</span>
-              </FieldColorPicker>
-            </label>
+            </div>
+            <div className={classes['option']}>
+              {/*<FieldColorPicker>*/}
+                <label>
+                  <input className={classes['input']} type="text" placeholder="#000000"/>
+                  <span className={classes['option__label']}>Background</span>
+                </label>
+              {/*</FieldColorPicker>*/}
+            </div>
           </div>
         </div>
       </div>
